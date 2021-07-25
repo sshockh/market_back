@@ -1,8 +1,9 @@
 package ru.sshock.market.model;
 
-import lombok.NonNull;
+import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(
@@ -11,6 +12,9 @@ import javax.persistence.*;
                 @UniqueConstraint(columnNames = "name")
         }
 )
+@Builder
+@Getter
+@AllArgsConstructor
 public class Product {
 
     @Id
@@ -19,4 +23,19 @@ public class Product {
 
     @NonNull
     private String name;
+
+    private String desc;
+    @NotNull
+    @ManyToOne
+    private Category category;
+
+    private Double price;
+
+    private String image;
+
+    private Integer availableCount;
+
+    public Product() {
+    }
+
 }

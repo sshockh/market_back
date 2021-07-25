@@ -1,5 +1,7 @@
 package ru.sshock.market.model;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,6 +11,7 @@ import javax.persistence.*;
                 @UniqueConstraint(columnNames = "name")
         }
 )
+@Getter
 public class Category {
 
     @Id
@@ -23,4 +26,5 @@ public class Category {
 
     private Category() {
     }
+
 }

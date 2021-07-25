@@ -9,5 +9,5 @@ public class AppSettings {
 
     @Getter
     @Setter
-    private int jwtExpirationMs = 30000;
+    private int jwtExpirationMs = 7_200_000;
 }
